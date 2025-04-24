@@ -1,6 +1,7 @@
 package com.shieldteq.algorithm.linkedlist;
 
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 @Slf4j
@@ -369,6 +370,92 @@ class LinkedListTest {
 
         */
 
+    }
+
+    @Test
+    public void findMiddleNodeTest() {
+
+        LinkedList myLinkedList = new LinkedList(1);
+        System.out.println(myLinkedList.findMiddleNode().value);
+        myLinkedList.append(2);
+        System.out.println(myLinkedList.findMiddleNode().value);
+        myLinkedList.append(3);
+        System.out.println(myLinkedList.findMiddleNode().value);
+        myLinkedList.append(4);
+        System.out.println(myLinkedList.findMiddleNode().value);
+        myLinkedList.append(5);
+        System.out.println(myLinkedList.findMiddleNode().value);
+    }
+    @Test
+    public void findMiddleNode1Test() {
+
+        LinkedList myLinkedList = new LinkedList(1);
+        System.out.println(myLinkedList.findMiddleNode1().value);
+        myLinkedList.append(2);
+        System.out.println(myLinkedList.findMiddleNode1().value);
+        myLinkedList.append(3);
+        System.out.println(myLinkedList.findMiddleNode1().value);
+        myLinkedList.append(4);
+        System.out.println(myLinkedList.findMiddleNode1().value);
+        myLinkedList.append(5);
+        System.out.println(myLinkedList.findMiddleNode1().value);
+    }
+
+    @Test
+    public void findKthFromEndTest() {
+
+        LinkedList myLinkedList = new LinkedList(1);
+        myLinkedList.append(2);
+        myLinkedList.append(3);
+        myLinkedList.append(4);
+        myLinkedList.append(5);
+        Assertions.assertEquals(4, myLinkedList.findKthFromEnd(1).value);
+        Assertions.assertEquals(3, myLinkedList.findKthFromEnd(2).value);
+    }
+    @Test
+    public void hasLoopTest() {
+        LinkedList myLinkedList = new LinkedList(1);
+        myLinkedList.append(2);
+        myLinkedList.append(3);
+        System.out.println(myLinkedList.hasLoop());
+    }
+    @Test
+    public void removeDuplicatesTest() {
+        LinkedList myLinkedList = new LinkedList(1);
+        myLinkedList.append(1);
+        myLinkedList.append(1);
+        myLinkedList.append(1);
+        myLinkedList.append(3);
+        myLinkedList.append(3);
+        myLinkedList.append(5);
+        myLinkedList.append(2);
+        myLinkedList.append(1);
+        myLinkedList.removeDuplicates();
+        myLinkedList.printList();
+    }
+
+    @Test
+    public void partitionListTest() {
+        LinkedList myLinkedList = new LinkedList(1);
+        myLinkedList.append(1);
+        myLinkedList.append(1);
+        myLinkedList.append(1);
+        myLinkedList.append(3);
+        myLinkedList.append(3);
+        myLinkedList.append(5);
+        myLinkedList.append(2);
+        myLinkedList.append(1);
+        myLinkedList.partitionList(3);
+        myLinkedList.printList();
+    }
+
+    @Test
+    public void binaryToDecimalTest() {
+        LinkedList myLinkedList = new LinkedList(1);
+        myLinkedList.append(0);
+        myLinkedList.append(1);
+        myLinkedList.append(0);
+        System.out.println(myLinkedList.binaryToDecimal());
     }
 }
 

@@ -1,5 +1,8 @@
 package com.shieldteq.algorithm.linkedlist;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class LinkedList {
     Node head;
     Node tail;
@@ -163,4 +166,139 @@ public class LinkedList {
             tempHead = next;
         }
     }
+
+    public Node findMiddleNode() {
+        if (head == null) return null;
+        if (head.next == null) return head;
+        Node temp = head;
+        Node middle = head;
+        int count = 0;
+        while (temp != null) {
+            count = (count + 1) % 2;
+            temp = temp.next;
+            if (count == 0) {
+                middle = middle.next;
+            }
+
+        }
+        return middle;
+    }
+
+    public Node findMiddleNode1() {
+        Node slow = head;
+        Node fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+
+    public Node findKthFromEnd(int k) {
+        if (head == null) return null;
+        Node temp = head;
+        Node found = head;
+        for (int i = 0; i < k; i++) {
+            temp = temp.next;
+        }
+        while (temp != null && temp.next != null) {
+            temp = temp.next;
+            found = found.next;
+        }
+        return found;
+    }
+
+    public boolean hasLoop() {
+        Node slow = head;
+        Node fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void partitionList(int x) {
+        Node current = head;
+        if (current == null) {
+            return;
+        }
+        Node prev = new Node(0);
+        Node next = new Node(0);
+        Node left = prev;
+        Node right = next;
+        while (current != null) {
+            if (current.value < x) {
+                left.next = current;
+                left = current;
+            } else {
+                right.next = current;
+                right = current;
+            }
+            current = current.next;
+        }
+        head = prev.next;
+        left.next = next.next;
+        right.next = null;
+    }
+
+    public void removeDuplicates() {
+        Set<Integer> values = new HashSet<>();
+        Node previous = null;
+        Node current = head;
+        while (current != null) {
+            if (values.contains(current.value)) {
+                previous.next = current.next;
+                length -= 1;
+            } else {
+                values.add(current.value);
+                previous = current;
+            }
+            current = current.next;
+        }
+    }
+    public int binaryToDecimal() {
+        int num = 0;
+        Node current = head;
+        while (current != null) {
+            num = num * 2 + current.value;
+            current = current.next;
+        }
+        return num;
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
