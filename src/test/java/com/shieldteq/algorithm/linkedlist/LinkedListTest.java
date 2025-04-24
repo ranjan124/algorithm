@@ -457,5 +457,20 @@ class LinkedListTest {
         myLinkedList.append(0);
         System.out.println(myLinkedList.binaryToDecimal());
     }
+
+    @Test
+    public void reverseBetweenTest() {
+        LinkedList myLinkedList = new LinkedList(1);
+        myLinkedList.append(2);
+        myLinkedList.append(3);
+        myLinkedList.append(4);
+        myLinkedList.append(5);
+        myLinkedList.append(6);
+        myLinkedList.append(7);
+        myLinkedList.append(8);
+        myLinkedList.append(9);
+        myLinkedList.reverseBetween(3, 7);
+        myLinkedList.printList();
+    }
 }
 
