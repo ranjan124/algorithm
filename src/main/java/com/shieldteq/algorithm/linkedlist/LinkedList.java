@@ -4,6 +4,17 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class LinkedList {
+
+    public static class Node {
+
+        public Node(int value) {
+            this.value = value;
+        }
+
+        int value;
+        Node next;
+    }
+
     Node head;
     Node tail;
     int length;
@@ -260,6 +271,7 @@ public class LinkedList {
             current = current.next;
         }
     }
+
     public int binaryToDecimal() {
         int num = 0;
         Node current = head;
@@ -292,6 +304,7 @@ public class LinkedList {
 
         head = dummyNode.next;
     }
+
 }
 
 
