@@ -50,4 +50,24 @@ class BinarySearchTreeTest {
         Assertions.assertTrue(myBST.contains(2));
         Assertions.assertFalse(myBST.contains(5));
     }
+
+
+    @Test
+    public void swapTest() {
+        int[] items = new int[]{5, 6};
+        for (int item : items) {
+            System.out.println(item);
+        }
+        swapItems(items);
+        System.out.println("After swap:");
+        for (int item : items) {
+            System.out.println(item);
+        }
+    }
+
+    private void swapItems(int[] items) {
+        int temp = items[0];
+        items[0] = items[1];
+        items[1] = temp;
+    }
 }
