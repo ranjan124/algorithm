@@ -1,6 +1,5 @@
 package com.shieldteq.algorithm.part1.bst;
 
-import com.shieldteq.algorithm.part1.bst.RecursiveBinarySearchTree;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -161,7 +160,7 @@ class RecursiveRecursiveBinarySearchTreeTest {
         }
         bst.invert(); // Perform inversion (or second inversion for the specific case)
 
-        ArrayList<Integer> resultList = bst.BFS();
+        ArrayList<Integer> resultList = bst.breadthFirstSearch();
 
         // Use Arrays.asList for compatibility with older Java versions
         List<Integer> expectedList = new ArrayList<>(Arrays.asList(expectedValues));

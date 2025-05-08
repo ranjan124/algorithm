@@ -7,6 +7,32 @@ public class BinarySearchTree {
 
     private Node root;
 
+    public void deleteNode(int value) {
+        Node deletePos = findPosition(value);
+        if(deletePos == null) return;
+        if(deletePos.left == null) {
+            deletePos = deletePos.right;
+        }else if(deletePos.right == null){
+            deletePos = deletePos.right;
+        }
+    }
+
+    private Node findPosition(int value) {
+        Node walker = root;
+        if (walker == null) return null;
+        while (walker != null) {
+            if (value < walker.value) {
+                walker = walker.left;
+            } else if (value > walker.value) {
+                walker = walker.right;
+            } else {
+                return walker;
+            }
+        }
+
+        return null;
+    }
+
     public static class Node {
         public int value;
         public Node left;
@@ -51,10 +77,10 @@ public class BinarySearchTree {
 
     public boolean contains(int value) {
         Node walker = root;
-        while(walker != null){
-            if(value == walker.value) return true;
+        while (walker != null) {
+            if (value == walker.value) return true;
 
-            walker = value < walker.value ? walker.left: walker.right;
+            walker = value < walker.value ? walker.left : walker.right;
         }
 
 

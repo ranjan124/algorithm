@@ -178,6 +178,18 @@ public class LinkedList {
         }
     }
 
+    public Node reverseList(Node head) {
+        Node temp = head;
+        Node prev = null;
+        while (temp != null) {
+            Node next = temp.next;
+            temp.next = prev;
+            prev = temp;
+            temp = next;
+        }
+        return prev;
+    }
+
     public Node findMiddleNode() {
         if (head == null) return null;
         if (head.next == null) return head;
